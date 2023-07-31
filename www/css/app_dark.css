@@ -1,0 +1,11 @@
+html {
+    background-color: #333;
+    color: #fff;
+}
+input {
+    color: #fff;
+}
+.coins {
+    background-color: #555;
+    border-bottom: 1px solid white;
+}

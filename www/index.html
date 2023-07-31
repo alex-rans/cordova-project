@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./css/materialize.1.0.0.min.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <link id="css" rel="stylesheet" href="./css/app_dark.css">
+    <title>Project Cordova</title>
+</head>
+<body>
+<header>
+    <div class="navbar-fixed">
+        <nav class="grey">
+            <div class="nav-wrapper container">
+                <!--            <a href="#!" class="brand-logo center">Project Cordova</a>-->
+                <a href="#!" data-target="nav-mobile" class="sidenav-trigger show-on-large">
+                    <i class="material-icons">menu</i>
+                </a>
+            </div>
+        </nav>
+    </div>
+    <ul id="nav-mobile" class="sidenav">
+        <li><a href="#!" data-show="wallet"><i class="material-icons">account_balance_wallet</i>Wallet</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a href="#!" data-show="scan" id="scanbutton"><i class="material-icons">qr_code_scanner</i>Scan</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a href="#!" data-show="pay"><i class="material-icons">credit_card</i>Pay</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a href="#!" data-show="settings"><i class="material-icons">settings</i>Settings</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a href="#!" data-show="info"><i class="material-icons">info</i>Info</a></li>
+        <li>
+    </ul>
+</header>
+<main>
+    <div class="container">
+        <div class="row spa" id="wallet">
+            <input class="col s6" type="text" id="text">
+            <input class="col s6" type="text" id="amount">
+            <button class="submit btn waves-effect" id="submitCoin">submit</button>
+            <div id="wallets">
+
+            </div>
+            <p class="total"></p>
+        </div>
+        <div class="row spa" id="scan">
+
+        </div>
+        <div class="row spa" id="pay">
+            <div class="row">
+                <div class="input-field col s6">
+                    <select id="currencylist">
+                    </select>
+                </div>
+                <div class="input-field col s6">
+                    <input type="text" id="currencyamount">
+                </div>
+            </div>
+            <div class="row">
+                <button class="submit btn waves-effect" id="submitPay">submit</button>
+            </div>
+            <div class="row">
+                <div id="qrcode"></div>
+            </div>
+        </div>
+        <div class="spa" id="settings">
+            <div class="row">
+                <div class="col s6">
+                    <p>Theme</p>
+                </div>
+                <div class="input-field col s6">
+                    <select id="screenmode">
+                        <option id="optionLightMode" value="light">Light mode</option>
+                        <option id="optionDarkMode" value="dark">Dark mode</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6">
+                    <p>Currency</p>
+                </div>
+                <div class="input-field col s6">
+                    <select id="currency">
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <a class="red waves-effect waves-light btn" id="reset">Reset</a>
+                </div>
+            </div>
+        </div>
+        <div class="row spa" id="info">
+            <p>This uses the CoinGecko API to get pricing information. Due to the sheer amount of cryptocurrencies
+                out there its impossible to hardcode them all in, or to dynamically create a list. The input field
+                only works with coins available on <a href="https://www.coingecko.com/en" target="_blank">CoinGecko</a>, and are
+                also case sensitive. This app will not actually add any money into a wallet or your phone. This is
+                just for demonstration purposes.
+            </p>
+            <div class="divider"></div>
+            <ul>
+                <li>Alex Rans</li>
+                <li>r0808003@student.thomasmore.com</li>
+                <li>+32 491 64 03 64</li>
+            </ul>
+            <div class="row">
+                <a href="sms://+32491640364" class="col s2">SMS</a>
+                <a href="tel://+32491640364" class="col s2">TEL</a>
+            </div>
+        </div>
+    </div>
+</main>
+<!--<script data-main="scripts/app" src="js/require.js"></script>-->
+<script src="js/jquery.3.5.1min.js"></script>
+<script src="js/qrcode.js"></script>
+<!--
+Holy shit materialize is so fucking retarded I can't even. Want to use an options tag or navigation? Fuck you you have
+to initialize it first. This is not standard practice, we just did this to fuck with you. Read the docs lmao loser. Why?
+Do they do it just to fuck with me? Ive been trying to talk to options with their unique ID's but materialize just
+overwrites them with random bullshit. Why? Has I ever? Imagine if you eeeeeveeeer want to talk to them using jquery. Naw
+man we at materialize got our own way of doing stuff, which is just completely fucking made it and doesn't make any
+sense. This is dumb bad code. "Figure it out loser" - Materialize, probably.
+
+This is why people use bootstrap but im too deep into this shit that I can't change anymore. This is agony.
+-->
+<script src="js/materialize.1.0.0.min.js"></script>
+<script src="cordova.js"></script>
+<<<<<<< HEAD
+<script src="js/settings.js"></script>
+=======
+<script src="js/settings.js" ></script>
+<script src="js/scanner.js"></script>
+>>>>>>> 1bd8a8b73fae5a7c7569a4a856e639d0c4eadfea
+<script src="js/wallets.js"></script>
+<script src="js/pay.js"></script>
+<script src="js/scanner.js"></script>
+<script defer src="js/app.js"></script>
+</body>
